@@ -1,0 +1,14 @@
+POST -/register - Fri, 26 Sep 2025 10:39:09 GMT - 4.880 ms
+GET -/signin - Fri, 26 Sep 2025 10:39:36 GMT - 0.716 ms
+GET -/admin/register - Fri, 26 Sep 2025 10:45:49 GMT - 235.389 ms
+GET -/admin/register - Fri, 26 Sep 2025 10:45:49 GMT - 235.389 ms
+GET -/admin/welcome - Fri, 26 Sep 2025 10:45:56 GMT - 13.481 ms
+GET -/admin/welcome - Fri, 26 Sep 2025 10:45:56 GMT - 13.481 ms
+GET -/favicon.ico - Fri, 26 Sep 2025 11:37:25 GMT - 4.365 ms
+GET -/favicon.ico - Fri, 26 Sep 2025 11:37:25 GMT - 4.365 ms
+GET -/admin/register - Fri, 26 Sep 2025 11:41:00 GMT - 445.426 ms
+GET -/admin/register - Fri, 26 Sep 2025 11:41:00 GMT - 445.426 ms
+POST -/register - Fri, 26 Sep 2025 11:41:18 GMT - 0.842 ms
+POST -/register - Fri, 26 Sep 2025 11:41:18 GMT - 0.842 ms
+POST -/register - Fri, 26 Sep 2025 11:53:54 GMT - 0.684 ms
+POST -/register - Fri, 26 Sep 2025 11:53:54 GMT - 0.684 ms

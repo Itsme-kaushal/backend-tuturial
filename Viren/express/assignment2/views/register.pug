@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title Register
+        style.
+            body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+            .btn { margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; border-radius: 4px; }
+            .new-user { background-color: #4CAF50; color: white; }
+            .signin { background-color: #008CBA; color: white; }
+    body
+        h1 Register
+        form(action="/register" method="POST")
+            div
+                label(for="username") Username:
+                input(type="text" name="username" id="username" required)
+            div
+                label(for="password") Password:
+                input(type="password" name="password" id="password" required)
+            div
+                button.btn.new-user(type="submit") Register
+                button.btn.signin(type="button" onclick="window.location.href='welcome'") Cancel
