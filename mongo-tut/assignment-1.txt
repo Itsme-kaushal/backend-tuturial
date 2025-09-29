@@ -1,0 +1,101 @@
+// 1. Insert Food documents (brand as array)
+db.food.insertMany([
+  { name: "Apple Juice", calories: 120, brand: ["Haldiram", "BTW"], category: "juices", price: 50 },
+  { name: "Burger", calories: 300, brand: ["BTW"], category: "snack", price: 80 },
+  { name: "Pasta", calories: 350, brand: ["BTW", "Haldi"], category: "meals", price: 150 }
+]);
+
+db.food.insertOne({ name: "Orange Juice", calories: 110, brand: ["Real", "Haldiram"], category: "juices", price: 45 });
+db.food.insertOne({ name: "Chips", calories: 250, brand: ["Lays"], category: "snack", price: 60 });
+
+// 1. Insert Restaurant documents
+db.restaurant.insertMany([
+  {
+    name: "The Great Delhi",
+    year: 2010,
+    location: "Connaught Place",
+    contact: "1234567890",
+    email: "contact@greatdelhi.com",
+    nos_of_days_open: 365,
+    city: "Delhi",
+    category: "meals",
+    serving: "Dining"
+  },
+  {
+    name: "Mumbai Treats",
+    year: 2015,
+    location: "Marine Drive",
+    contact: "9876543210",
+    email: "info@mumbaitreats.com",
+    nos_of_days_open: 360,
+    city: "Mumbai",
+    category: "snack",
+    serving: "Takeaway"
+  },
+  {
+    name: "Juice Hub",
+    year: 2018,
+    location: "Andheri",
+    contact: "1122334455",
+    email: "juicehub@gmail.com",
+    nos_of_days_open: 300,
+    city: "Mumbai",
+    category: "juices",
+    serving: "Buffet"
+  }
+]);
+
+db.restaurant.insertOne({
+  name: "Delhi Dine",
+  year: 2012,
+  location: "Saket",
+  contact: "5566778899",
+  email: "delhidine@gmail.com",
+  nos_of_days_open: 350,
+  city: "Delhi",
+  category: "meals",
+  serving: "Dining"
+});
+
+db.restaurant.insertOne({
+  name: "Snack Point",
+  year: 2019,
+  location: "Bandra",
+  contact: "9988776655",
+  email: "snackpoint@gmail.com",
+  nos_of_days_open: 250,
+  city: "Mumbai",
+  category: "snack",
+  serving: "Takeaway"
+});
+
+// 2. Find food items with category "juices"
+db.food.find({ category: "juices" }).pretty();
+
+// 3. Find restaurants in city "Delhi" or "Mumbai"
+db.restaurant.find({ city: { $in: ["Delhi", "Mumbai"] } }).pretty();
+
+// 4. Update price of any one food item with category "snack"
+db.food.updateOne(
+  { category: "snack" },
+  { $set: { price: 100 } }
+);
+
+// 5. Update location of restaurant(s) belonging to city "Delhi"
+// Update first restaurant found:
+db.restaurant.updateOne(
+  { city: "Delhi" },
+  { $set: { location: "New Delhi Location" } }
+);
+
+// Update all restaurants in Delhi:
+db.restaurant.updateMany(
+  { city: "Delhi" },
+  { $set: { location: "New Delhi Location" } }
+);
+
+// 6. Delete food items where brand array contains "Haldiram"
+db.food.deleteMany({ brand: "Haldiram" });
+
+// Delete food items belonging to category "juices"
+db.food.deleteMany({ category: "juices" });
